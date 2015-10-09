@@ -4,7 +4,7 @@ require 'json'
 
 # Scraper for CodeSchool website
 module CodeSchool
-  COURSES = 'https://www.codeschool.com/courses/'
+  COURSES = 'https://www.codeschool.com/courses'
 
   # Gets array of courses
   def courses
@@ -13,7 +13,7 @@ module CodeSchool
 
   # Gets names of teacher(s) for one course
   def teacher(name)
-    Nokogiri::HTML(open("#{COURSES}#{name}"))
+    Nokogiri::HTML(open("#{COURSES}/#{name}"))
   end
 
   # Get an array of course names
@@ -40,7 +40,8 @@ module CodeSchool
   # JSON array of course names (string) and teacher(s) (array)
   def code_school_data
     course_names.zip(teacher_names).map do |c_t|
-      { course: c_t[0], teacher: c_t[1] }
+      # { course: c_t[0], teacher: c_t[1] }
+      { c_t[0] => c_t[1] }
     end.to_json
   end
 end
