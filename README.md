@@ -15,12 +15,12 @@ gem install soa_codeschool
 ### Command line usage
 
 ```
-codeschool  # Puts JSON array of code school courses and teachers to command line
+soa_codeschool  # Puts JSON array of code school courses and teachers to command line
 ```
 
 ### Usage in ruby code
 ```
-require 'scrape'
+require 'soa_codeschool'
 
 code_school = SiteScraper.new
 code_school.course_names  # Returns array of course names

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require_relative '../lib/scrape'
+require_relative '../lib/soa_codeschool'
 
 code_school = SiteScraper.new
 code_school.code_school_output

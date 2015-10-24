@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/rg'
 require 'vcr'
 require 'webmock/minitest'
-require_relative '../lib/scrape'
+require_relative '../lib/soa_codeschool'
 
 VCR.configure do |config|
   config.cassette_library_dir = './spec/fixtures/vcr/cassettes'
