@@ -15,7 +15,7 @@ gem install soa_codeschool
 ### Command line usage
 
 ```
-soa_codeschool  # Puts JSON array of code school courses and teachers to command line
+codeschool  # Puts JSON array of code school courses and teachers to command line
 ```
 
 ### Usage in ruby code
