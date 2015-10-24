@@ -1,4 +1,4 @@
-require_relative './code_school'
+require_relative './code_school/code_school'
 
 # Scraper class for several sites
 class SiteScraper
