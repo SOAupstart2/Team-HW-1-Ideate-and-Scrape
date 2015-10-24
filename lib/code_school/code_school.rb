@@ -5,6 +5,8 @@ require 'json'
 # Scraper for CodeSchool website
 module CodeSchool
   COURSES = 'https://www.codeschool.com/courses'
+  COURSE_NAMES_XPATH = '//h2/a'
+  TEACHER_NAMES_XPATH = '//h3/a'
 
   # Gets array of courses
   def courses
@@ -18,7 +20,7 @@ module CodeSchool
 
   # Get an array of course names
   def course_names
-    courses.xpath('//h2/a').map(&:text)
+    courses.xpath(COURSE_NAMES_XPATH).map(&:text)
   end
 
   # Change course names to urls
@@ -33,7 +35,7 @@ module CodeSchool
   # Get teachar's name by visiting each course page
   def teacher_names
     course_urls.map do |course_url|
-      teacher(course_url).xpath('//h3/a').map(&:text)
+      teacher(course_url).xpath(TEACHER_NAMES_XPATH).map(&:text)
     end
   end
 
